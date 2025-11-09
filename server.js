@@ -86,10 +86,16 @@ app.use((req, res) => {
 
 // STEP 10: Start the server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log('=================================');
-  console.log(`🚀 Server is running!`);
-  console.log(`📍 Local: http://localhost:${PORT}`);
-  console.log(`🌍 Environment: ${process.env.NODE_ENV}`);
-  console.log('=================================');
-});
+
+if (!process.env.RENDER) {
+  app.listen(PORT, () => {
+    console.log('=================================');
+    console.log(`🚀 Server is running!`);
+    console.log(`📍 Local: http://localhost:${PORT}`);
+    console.log(`🌍 Environment: ${process.env.NODE_ENV}`);
+    console.log('=================================');
+  });
+}
+
+// Export for Vercel
+module.exports = app;
