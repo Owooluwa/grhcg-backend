@@ -88,7 +88,7 @@ app.use((req, res) => {
 const PORT = process.env.PORT || 5000;
 
 if (!process.env.RENDER) {
-  app.listen(PORT, () => {
+  app.listen(PORT, '0.0.0.0', () => {
     console.log('=================================');
     console.log(`🚀 Server is running!`);
     console.log(`📍 Local: http://localhost:${PORT}`);
