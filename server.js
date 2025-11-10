@@ -89,12 +89,12 @@ const PORT = process.env.PORT || 5000;
 
 if (!process.env.RENDER) {
   app.listen(PORT, '0.0.0.0', () => {
-    console.log('=================================');
-    console.log(`🚀 Server is running!`);
-    console.log(`📍 Local: http://localhost:${PORT}`);
-    console.log(`🌍 Environment: ${process.env.NODE_ENV}`);
-    console.log('=================================');
-  });
+  console.log('=================================');
+  console.log(`🚀 Server is running on port ${PORT}`);
+  console.log(`🌍 Environment: ${process.env.NODE_ENV || 'production'}`);
+  console.log('=================================');
+});
+
 }
 
 // Export for Vercel
