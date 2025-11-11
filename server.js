@@ -87,15 +87,13 @@ app.use((req, res) => {
 // STEP 10: Start the server
 const PORT = process.env.PORT || 5000;
 
-if (!process.env.RENDER) {
-  app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log('=================================');
   console.log(`🚀 Server is running on port ${PORT}`);
   console.log(`🌍 Environment: ${process.env.NODE_ENV || 'production'}`);
   console.log('=================================');
 });
 
-}
 
 // Export for Vercel
 module.exports = app;
